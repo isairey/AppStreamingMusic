@@ -1,0 +1,20 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $Page : $AdwNavigationPage {
+  Stack stack {
+    vhomogeneous: false;
+    transition-type: crossfade;
+
+    Adw.Bin loading {
+      Adw.ToolbarView {
+        [top]
+        Adw.HeaderBar {}
+
+        $Loading {}
+      }
+    }
+
+    Adw.Bin content {}
+  }
+}

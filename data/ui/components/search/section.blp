@@ -1,0 +1,34 @@
+using Gtk 4.0;
+
+template $SearchSection : Box {
+  valign: start;
+  orientation: vertical;
+
+  Box {
+    margin-start: 12;
+    margin-end: 12;
+    margin-bottom: 6;
+    height-request: 32;
+
+    Label title {
+      styles [
+        "title-2",
+      ]
+    }
+
+    Button more {
+      visible: false;
+      halign: end;
+      hexpand: true;
+      label: _("More");
+
+      styles [
+        "rounded",
+      ]
+    }
+  }
+
+  $FlatListView card_view {
+    child-type: 1;
+  }
+}

@@ -1,0 +1,35 @@
+using Gtk 4.0;
+
+template $TopResultSection : Box {
+  valign: start;
+  orientation: vertical;
+
+  Box {
+    margin-start: 12;
+    margin-end: 12;
+    margin-bottom: 6;
+    height-request: 32;
+
+    Label {
+      label: _("Top Result");
+
+      styles [
+        "title-2",
+      ]
+    }
+  }
+
+  Box box {
+    spacing: 6;
+    margin-start: 6;
+    margin-end: 6;
+
+    $TopResultCard card {}
+
+    $FlatListView list_view {
+      visible: false;
+      hexpand: true;
+      child-type: 1;
+    }
+  }
+}

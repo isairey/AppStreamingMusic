@@ -1,0 +1,103 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $ChannelPage : Adw.Bin {
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [start]
+      Button {
+        icon-name: "refresh";
+        action-name: "navigator.reload";
+      }
+
+      [end]
+      MenuButton menu {
+        icon-name: "view-more-symbolic";
+      }
+    }
+  
+    content: Adw.BreakpointBin {
+      width-request: 200;
+      height-request: 200;
+      
+      Adw.Breakpoint {
+        condition ("max-width: 700sp")
+
+        setters {
+          header.show_large_header: false;
+          playlist_item_view.show-column-view: false;
+        }
+      }
+
+      ScrolledWindow scrolled {
+        vexpand: true;
+        hexpand: true;
+        hscrollbar-policy: never;
+
+        Adw.Clamp {
+          margin-top: 12;
+          margin-bottom: 12;
+          tightening-threshold: 1200;
+          maximum-size: 1400;
+
+          Box {
+            spacing: 18;
+            orientation: vertical;
+
+            $PlaylistHeader header {
+              show-large-header: true;
+              show-meta: false;
+              show-avatar: true;
+            }
+
+            Box songs_on_repeat {
+              spacing: 12;
+              orientation: vertical;
+              height-request: 42;
+
+              Box {
+                margin-start: 12;
+                margin-end: 12;
+
+                Box {
+                  valign: center;
+                  orientation: vertical;
+
+                  Label subtitle {
+                    halign: start;
+                    ellipsize: end;
+                    label: _("Last 7 days");
+
+                    styles [
+                      "dim-label",
+                    ]
+                  }
+
+                  Label {
+                    label: _("Songs on Repeat");
+                    halign: start;
+                    xalign: 0;
+
+                    styles [
+                      "title-2",
+                    ]
+                  }
+                }
+              }
+
+              $PlaylistItemView playlist_item_view {
+                show-column-view: true;
+              }
+            }
+
+            Box carousels {
+              spacing: 12;
+              orientation: vertical;
+            }
+          }
+        }
+      }
+    };
+  }
+}

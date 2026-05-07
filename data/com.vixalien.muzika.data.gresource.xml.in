@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/vixalien/muzika">
+    <!-- metainfo -->
+    <file preprocess="xml-stripblanks">@app-id@.metainfo.xml</file>
+    <!-- style -->
+    <file>style.css</file>
+    <!-- UI -->
+    @ui-resources@
+    <!-- icons -->
+    <file preprocess="xml-stripblanks">icons/scalable/actions/compass2-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/explicit-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/heart-broken-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/history-undo-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/left-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/library-artists-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/library-music-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/library-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/moon-filled-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/music-artist-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/music-note-single-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/navigate-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/play-white-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/play-white.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/playlist-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/playlist2-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/profit-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/progress-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/refresh-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/sentiment-satisfied-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/skip-backwards-10-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/skip-forward-10-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/sonar-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/sound-wave-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/subtitles-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/thumbs-down-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/thumbs-up-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/trend-down-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/trend-neutral-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/trend-up-symbolic.svg</file>
+  </gresource>
+</gresources>

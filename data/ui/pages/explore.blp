@@ -1,0 +1,78 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $ExplorePage : Adw.Bin {
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [start]
+      Button {
+        icon-name: "refresh";
+        action-name: "navigator.reload";
+      }
+    }
+  
+    content: ScrolledWindow scrolled {
+      vexpand: true;
+      hexpand: true;
+
+      Adw.Clamp {
+        margin-top: 12;
+        margin-bottom: 12;
+        tightening-threshold: 1200;
+        maximum-size: 1400;
+
+        Box box {
+          orientation: vertical;
+          spacing: 12;
+
+          FlowBox {
+            column-spacing: 12;
+            row-spacing: 12;
+            homogeneous: true;
+            margin-start: 12;
+            margin-end: 12;
+            max-children-per-line: 3;
+            selection-mode: none;
+
+            Button {
+              action-name: "navigator.visit";
+              action-target: "\"muzika:new-releases\"";
+
+              styles ["pill"]
+
+              Adw.ButtonContent {
+                icon-name: "moon-filled-symbolic";
+                label: _("New Releases");
+              }
+            }
+
+            Button {
+              action-name: "navigator.visit";
+              action-target: "\"muzika:charts\"";
+
+              styles ["pill"]
+
+              Adw.ButtonContent {
+                icon-name: "profit-symbolic";
+                label: _("Charts");
+              }
+            }
+
+            Button {
+              action-name: "navigator.visit";
+              action-target: "\"muzika:moods-and-genres\"";
+
+              styles ["pill"]
+
+              Adw.ButtonContent {
+                icon-name: "sentiment-satisfied-symbolic";
+                label: _("Moods and Genres");
+              }
+            }
+          }
+        }
+      }
+    };
+  }
+}

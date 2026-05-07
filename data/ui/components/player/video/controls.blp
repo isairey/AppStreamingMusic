@@ -1,0 +1,120 @@
+using Gtk 4.0;
+using Adw 1;
+
+Popover volume_popover {
+  $VolumeControls {}
+}
+
+template $VideoControls : Adw.Bin {
+  Adw.Clamp clamp {
+    margin-end: 6;
+    margin-bottom: 6;
+    margin-start: 6;
+    valign: end;
+    maximum-size: 800;
+    tightening-threshold: 600;
+
+    Box toolbar_box {
+      valign: end;
+      orientation: vertical;
+
+      styles ["osd", "toolbar"]
+
+      CenterBox {
+        margin-top: 3;
+
+        [start]
+        Label progress_label {
+          margin-start: 12;
+          margin-end: 3;
+
+          styles [
+            "numeric",
+            "caption",
+          ]
+        }
+
+        [center]
+        Adw.WindowTitle window_title {
+          halign: center;
+          hexpand: true;
+          margin-start: 12;
+          margin-end: 12;
+        }
+
+        [end]
+        Label duration_label {
+          margin-start: 3;
+          margin-end: 3;
+
+          styles [
+            "numeric",
+            "caption",
+          ]
+        }
+      }
+      
+      $PlayerScale scale {}
+
+      CenterBox {
+        [start]
+        MenuButton volume_button {
+          icon-name: "audio-volume-high-symbolic";
+          direction: up;
+          popover: volume_popover;
+          tooltip-text: _("Adjust Volume");
+
+          styles [
+            "flat",
+          ]
+        }
+
+        [center]
+        Box {
+          spacing: 6;
+
+          Button {
+            icon-name: "media-skip-backward-symbolic";
+            tooltip-text: _("Previous");
+            action-name: "queue.previous";
+
+            styles [
+              "flat",
+            ]
+          }
+
+          Button play_button {
+            tooltip-text: _("Toggle Play/Pause");
+            icon-name: "media-playback-start-symbolic";
+            action-name: "player.play-pause";
+
+            styles [
+              "flat",
+            ]
+          }
+          
+          Button {
+            icon-name: "media-skip-forward-symbolic";
+            tooltip-text: _("Next");
+            action-name: "queue.next";
+
+            styles [
+              "flat",
+            ]
+          }
+        }
+
+        [end]
+        MenuButton more_button {
+          icon-name: "view-more-symbolic";
+          direction: up;
+          tooltip-text: _("More Options");
+
+          styles [
+            "flat",
+          ]
+        }
+      }
+    }
+  }
+}

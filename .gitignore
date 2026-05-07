@@ -1,0 +1,6 @@
+_build/
+.vscode/
+.flatpak/
+.flatpak-builder/
+node_modules/
+/subprojects/blueprint-compiler

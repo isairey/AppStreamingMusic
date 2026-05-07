@@ -1,0 +1,18 @@
+using Gtk 4.0;
+
+template $NavbarView : Box {
+  orientation: vertical;
+
+  SearchEntry search {
+    placeholder-text: _("Search…");
+    margin-start: 12;
+    margin-end: 12;
+    margin-bottom: 6;
+    margin-top: 12;
+  }
+
+  ListView list_view {
+    single-click-activate: true;
+    styles ["navigation-sidebar"]
+  }
+}

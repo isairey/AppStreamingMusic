@@ -1,0 +1,31 @@
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+name: CI
+jobs:
+  lint:
+    name: ESLint
+    runs-on: ubuntu-latest # on which machine to run
+    steps: # list of steps
+      - name: Install NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Code Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Code Linting
+        run: yarn lint
+
+      - name: Typechecking
+        run: yarn typecheck

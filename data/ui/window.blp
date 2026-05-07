@@ -1,0 +1,37 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $MuzikaWindow : Adw.ApplicationWindow {
+  default-width: 1000;
+  default-height: 800;
+  width-request: 360;
+  height-request: 294;
+  bottom-bar-height: bind $calculate_bottom_bar_height(
+    main_stack.visible-child-name,
+    shell.bottom-bar-height,
+    video_player_view.bottom-bar-height
+  ) as <uint>;
+
+  Adw.ToastOverlay toast_overlay {
+    styles ["main-toast-overlay"]
+
+    Stack main_stack {
+      transition-type: slide_up_down;
+
+      StackPage {
+        name: "main";
+        child: $MuzikaShell shell {
+          Adw.NavigationView navigation_view {
+            vexpand: true;
+            width-request: 300;
+          }
+        };
+      }
+
+      StackPage {
+        name: "video";
+        child: $VideoPlayerView video_player_view {};
+      }
+    }
+  }
+}

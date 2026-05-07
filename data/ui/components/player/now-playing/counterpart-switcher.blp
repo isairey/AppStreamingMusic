@@ -1,0 +1,16 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $MuzikaNPCounterpartSwitcher : Adw.Bin {
+  Adw.ToggleGroup toggle_group {
+    Adw.Toggle {
+      name: "song";
+      label: _("Song");
+    }
+
+    Adw.Toggle {
+      name: "video";
+      label: _("Video");
+    }
+  }
+}

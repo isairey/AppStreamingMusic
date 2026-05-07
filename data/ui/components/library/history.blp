@@ -1,0 +1,37 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $HistoryPage : Adw.Bin {
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [start]
+      Button {
+        icon-name: "refresh";
+        action-name: "navigator.reload";
+      }
+    }
+  
+    content: Adw.BreakpointBin {
+      width-request: 200;
+      height-request: 200;
+      
+      Adw.Breakpoint {
+        condition ("max-width: 700sp")
+
+        setters {
+          item_view.show-column-view: false;
+        }
+      }
+      
+      ScrolledWindow scrolled {
+        hexpand: true;
+        hscrollbar-policy: never;
+
+        $PlaylistItemView item_view {
+          show-column-view: true;
+        }
+      }
+    };
+  }
+}

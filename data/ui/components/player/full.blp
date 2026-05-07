@@ -1,0 +1,190 @@
+using Gtk 4.0;
+using Adw 1;
+using Gdk 4.0;
+
+template $FullPlayerView : ActionBar {
+  styles [
+    "full-player-view"
+  ]
+
+  [start]
+  Box song_info_box {
+    spacing: 12;
+
+    Overlay {
+      valign: center;
+
+      $PlayerPreview {
+        size: 74;
+        cursor: Gdk.Cursor {
+          name: "pointer";
+        };
+
+        GestureClick {
+          pressed => $gesture_pressed_cb();
+        }
+      }
+
+      [overlay]
+      Button counterpart_switcher {
+        icon-name: "emblem-videos-symbolic";
+        valign: start;
+        halign: end;
+        margin-end: 6;
+        margin-top: 6;
+        // imo it feels better if this is clickable too
+        cursor: Gdk.Cursor {
+          name: "pointer";
+        };
+        clicked => $counterpart_switcher_clicked_cb();
+
+        styles ["osd", "circular", "counterpart-button"]
+      }
+    }
+
+    Box now_playing_labels {
+      orientation: vertical;
+      valign: center;
+      homogeneous: false;
+      width-request: 100;
+
+      Label title {
+        halign: start;
+        use-markup: true;
+        hexpand: true;
+        ellipsize: end;
+        xalign: 0;
+
+        styles [
+          "heading",
+          "flat-links",
+        ]
+      }
+
+      Label subtitle {
+        halign: start;
+        use-markup: true;
+        hexpand: true;
+        ellipsize: end;
+        xalign: 0;
+
+        styles [
+          "flat-links",
+        ]
+      }
+    }
+  }
+
+  [center]
+  Box buttons_and_scale {
+    orientation: vertical;
+    hexpand: true;
+
+    Box buttons {
+      spacing: 3;
+      valign: center;
+      halign: center;
+
+      ToggleButton shuffle_button {
+        icon-name: "media-playlist-shuffle-symbolic";
+        tooltip-text: _("Toggle Shuffle");
+        action-name: "queue.toggle-shuffle";
+        valign: center;
+        margin-end: 12;
+
+        styles [
+          "circular",
+        ]
+      }
+
+      Button prev_button {
+        icon-name: "media-skip-backward-symbolic";
+        tooltip-text: _("Previous");
+        action-name: "queue.previous";
+        valign: center;
+
+        styles [
+          "circular",
+        ]
+      }
+
+      Button play_button {
+        tooltip-text: _("Toggle Play/Pause");
+        action-name: "player.play-pause";
+
+        styles [
+          "pill",
+        ]
+
+        Image play_image {
+          pixel-size: 26;
+        }
+      }
+
+      Button next_button {
+        icon-name: "media-skip-forward-symbolic";
+        tooltip-text: _("Next");
+        action-name: "queue.next";
+        valign: center;
+
+        styles [
+          "circular",
+        ]
+      }
+
+      ToggleButton repeat_button {
+        icon-name: "media-playlist-consecutive-symbolic";
+        tooltip-text: _("Toggle Repeat State");
+        valign: center;
+        action-name: "queue.toggle-repeat";
+        margin-start: 12;
+
+        styles [
+          "circular",
+        ]
+      }
+    }
+
+    Adw.Clamp {
+      maximum-size: 1000;
+
+      Box scale_and_timer {
+        Label progress_label {
+          label: "0:00";
+          halign: start;
+          valign: center;
+
+          styles [
+            "numeric"
+          ]
+        }
+
+        $PlayerScale {}
+
+        Label duration_label {
+          label: "0:00";
+          halign: start;
+          valign: center;
+
+          styles [
+            "numeric"
+          ]
+        }
+      }
+    }
+  }
+
+  [end]
+  Box buttons_box {
+    valign: center;
+    spacing: 6;
+
+    VolumeButton volume_button {
+      tooltip-text: _("Adjust Volume");
+    }
+
+    $MuzikaNPDetailsSwitcher switcher {
+      show-buttons: true;
+    }
+  }
+}

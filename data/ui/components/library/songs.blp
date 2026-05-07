@@ -1,0 +1,55 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $LibrarySongsPage : Adw.Bin {
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [start]
+      Button {
+        icon-name: "refresh";
+        action-name: "navigator.reload";
+      }
+    }
+  
+    content: Adw.BreakpointBin {
+      width-request: 200;
+      height-request: 200;
+      
+      Adw.Breakpoint {
+        condition ("max-width: 700sp")
+
+        setters {
+          item_view.show-column-view: false;
+        }
+      }
+      
+      ScrolledWindow scrolled {
+        hexpand: true;
+        hscrollbar-policy: never;
+
+        Box {
+          orientation: vertical;
+          spacing: 12;
+
+          Box {
+            styles ["toolbar"]
+
+            DropDown drop_down {
+              halign: end;
+              hexpand: true;
+            }
+          }
+
+          $PlaylistItemView item_view {
+            show-column-view: true;
+          }
+
+          $Paginator paginator {
+            activate => $load_more();
+          }
+        }
+      }
+    };
+  }
+}

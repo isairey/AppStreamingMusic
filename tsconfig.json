@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "module": "ESNext",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ],
+    "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": true,
+    "outDir": "_build",
+    "strict": true,
+    "moduleResolution": "Bundler",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "types/*",
+        "gi-types/*"
+      ],
+    },
+    "typeRoots": [
+      "gi-types"
+    ],
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "gi-types/gi.d.ts",
+    "types/ambient.d.ts",
+    "src/**/*"
+  ],
+}

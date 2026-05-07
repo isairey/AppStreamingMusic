@@ -1,0 +1,66 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $HomePage : Adw.Bin {
+  Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [start]
+      Button {
+        icon-name: "refresh";
+        action-name: "navigator.reload";
+      }
+    }
+
+    [top]
+    ScrolledWindow {
+      vscrollbar-policy: never;
+      hscrollbar-policy: external;
+
+      Adw.ToggleGroup moods {
+        visible: false;
+        margin-start: 12;
+        margin-end: 12;
+        margin-bottom: 6;
+        margin-top: 6;
+        can-shrink: false;
+        halign: start;
+
+        notify::active-name => $on_mood_changed_cb();
+
+        styles ["flat"]
+
+        Adw.Toggle {
+          name: "home";
+          label: _("Home");
+        }
+      }
+    }
+  
+    content: ScrolledWindow scrolled {
+      vexpand: true;
+      hexpand: true;
+
+      Adw.Clamp {
+        margin-top: 12;
+        margin-bottom: 12;
+        tightening-threshold: 1200;
+        maximum-size: 1400;
+
+        Box box {
+          orientation: vertical;
+          spacing: 12;
+
+          Box carousels {
+            orientation: vertical;
+            spacing: 12;
+          }
+
+          $Paginator paginator {
+            can-paginate: true;
+          }
+        }
+      }
+    };
+  }
+}

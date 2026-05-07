@@ -1,0 +1,74 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $MuzikaNPLyrics : Stack {
+  Adw.StatusPage no_lyrics {
+    icon-name: "heart-broken-symbolic";
+    title: _("Lyrics are not available");
+    description: _("If the song has lyrics, they\'ll appear here when they become available");
+  }
+
+  Adw.Spinner loading {
+    halign: center;
+    valign: center;
+    width-request: 32;
+    height-request: 32;
+  }
+
+  ScrolledWindow lyrics_window {
+    hscrollbar-policy: never;
+
+    TextView view {
+      left-margin: 9;
+      right-margin: 9;
+      top-margin: 9;
+      bottom-margin: 9;
+      hexpand: true;
+
+      styles [
+        "background",
+        "transparent",
+      ]
+
+      editable: false;
+      cursor-visible: false;
+      wrap-mode: word_char;
+      buffer: 
+      TextBuffer buffer {
+        text: "";
+      }
+
+      ;
+    }
+  }
+
+  ScrolledWindow timed_window {
+    hscrollbar-policy: never;
+
+    Gtk.Box {
+      orientation: vertical;
+      spacing: 12;
+
+      ListBox timed_listbox {
+        margin-top: 12;
+        selection-mode: browse;
+        row-activated => $lyrics_row_activated();
+        map => $setup_timed_lyrics();
+        unmap => $clear_timed_lyrics();
+
+        styles [
+          "transparent",
+        ]
+      }
+
+      Label timed_source {
+        xalign: 0;
+        margin-start: 12;
+        margin-end: 12;
+        margin-bottom: 300;
+
+        styles ["dim-label"]
+      }
+    }
+  }
+}
