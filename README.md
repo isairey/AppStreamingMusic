@@ -13,10 +13,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/isairey/Muzika?style=for-the-badge" />
-  <img src="https://img.shields.io/github/forks/isairey/Muzika?style=for-the-badge" />
-  <img src="https://img.shields.io/github/license/isairey/Muzika?style=for-the-badge" />
-  <img src="https://img.shields.io/github/issues/isairey/Muzika?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/isairey/AppStreamingMusic?style=for-the-badge" />
+  <img src="https://img.shields.io/github/forks/isairey/AppStreamingMusic?style=for-the-badge" />
+  <img src="https://img.shields.io/github/license/isairey/AppStreamingMusic?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues/isairey/AppStreamingMusic?style=for-the-badge" />
 </p>
 
 ---
