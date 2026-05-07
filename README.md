@@ -2,7 +2,7 @@
   <img src="https://github.com/isairey.png" width="140" style="border-radius:50%;" alt="Isai Reyes Avatar" />
 </p>
 
-<h1 align="center">🎵 Muzika</h1>
+<h1 align="center">🎵 AppStreamingMusic</h1>
 
 <p align="center">
   <strong>Aplicación moderna de streaming musical con una interfaz elegante y minimalista.</strong>
@@ -86,31 +86,45 @@ Puedes descargar la última versión Flatpak desde:
 
 ```bash
 flatpak install muzika.flatpakref
-🔹 Compilar desde el código fuente
+```
+
+## 🔹 Compilar desde el código fuente
+
 Requisitos
-GNOME Builder
-GTK4
-libadwaita
-Meson
-Ninja
+
+- GNOME Builder
+- GTK4
+- libadwaita
+- Meson
+- Ninja
+
 Clonar el repositorio
-git clone https://github.com/isairey/Muzika.git --recurse-submodules
-Abrir el proyecto
+```
+git clone https://github.com/isairey/AppStreamingMusic.git --recurse-submodules
+```
+## 🔹 Abrir el proyecto
 
 Abre el proyecto en GNOME Builder y selecciona:
-
+```
 Build → Run
-🚀 Navegación interna
+```
+---
+
+##🚀 Navegación interna
 
 Muzika utiliza un sistema de navegación mediante URIs personalizadas.
 
-Ejemplos
-muzika:home
-muzika:library
-muzika:album:ID
-muzika:playlist:ID
-search:rock
-📂 Estructura del proyecto
+- Ejemplos
+- muzika:home
+- muzika:library
+- muzika:album:ID
+- muzika:playlist:ID
+- search:rock
+
+---
+
+# 📂 Estructura del proyecto
+```
 Muzika/
 │
 ├── data/
@@ -119,33 +133,45 @@ Muzika/
 ├── meson.build
 ├── package.json
 └── README.md
-📊 Roadmap
- Descarga de canciones offline
- Sincronización multiplataforma
- Ecualizador integrado
- Sistema de recomendaciones
- Temas personalizados
- Letras sincronizadas
- Aplicación móvil
-🤝 Contribuciones
+```
+---
+
+# 📊 Roadmap
+
+- Descarga de canciones offline
+- Sincronización multiplataforma
+- Ecualizador integrado
+- Sistema de recomendaciones
+- Temas personalizados
+- Letras sincronizadas
+- Aplicación móvil
+
+ ---
+ 
+# 🤝 Contribuciones
 
 Las contribuciones son bienvenidas.
 
 Si deseas mejorar el proyecto:
 
-Haz un Fork
-Crea una nueva rama
-git checkout -b feature/nueva-funcion
-Realiza tus cambios
-Haz commit
-git commit -m "Nueva funcionalidad"
-Haz push
-git push origin feature/nueva-funcion
-Abre un Pull Request
-👨‍💻 Autor
+- Haz un Fork
+- Crea una nueva rama
+- git checkout -b feature/nueva-funcion
+- Realiza tus cambios
+- Haz commit
+- git commit -m "Nueva funcionalidad"
+- Haz push
+- git push origin feature/nueva-funcion
+- Abre un Pull Request
+
+---
+
+# 👨‍💻 Autor
 <p align="center"> <img src="https://github.com/isairey.png" width="120" style="border-radius:50%;" /> </p> <p align="center"> <b>Isai Reyes</b> </p> <p align="center"> Desarrollador Full Stack apasionado por la música, el diseño moderno y las aplicaciones multiplataforma. </p>
-📜 Licencia
+
+---
+
+# 📜 Licencia
 
 Este proyecto está bajo la licencia MIT.
 
-Puedes usarlo, modificarlo y distribuirlo libremente.
