@@ -1,79 +1,151 @@
-# Muzika
+<p align="center">
+  <img src="https://github.com/isairey.png" width="140" style="border-radius:50%;" alt="Isai Reyes Avatar" />
+</p>
 
-> [!CAUTION]
-> Muzika is currently unmaintained, and will be archived in the future. See https://github.com/vixalien/muzika/issues/220 for more details.
+<h1 align="center">🎵 Muzika</h1>
 
-Muzika is an elegant music streaming app.
+<p align="center">
+  <strong>Aplicación moderna de streaming musical con una interfaz elegante y minimalista.</strong>
+</p>
 
-![Muzika home page](data/resources/screenshots/home.png)
+<p align="center">
+  Desarrollado por <b>Isai Reyes</b>
+</p>
 
-![Muzika playing "My Queen is Angela Davis"](data/resources/screenshots/playing.png)
+<p align="center">
+  <img src="https://img.shields.io/github/stars/isairey/Muzika?style=for-the-badge" />
+  <img src="https://img.shields.io/github/forks/isairey/Muzika?style=for-the-badge" />
+  <img src="https://img.shields.io/github/license/isairey/Muzika?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues/isairey/Muzika?style=for-the-badge" />
+</p>
 
-> Note: This is a work in progress. The app is not yet ready for production.
+---
 
-## Features
+# 📖 Descripción
 
-- Personalized home screen
-- Search for songs, albums, artists, radios and playlists
-- Login with Google and access your playlists and more from your library
-- Play personalized radios & mixes
-- View song lyrics & related information
-- Browse artists, albums and playlists etc.
+**Muzika** es una aplicación de streaming de música creada para ofrecer una experiencia moderna, rápida y visualmente atractiva.  
 
-## Installation
+La aplicación permite explorar canciones, álbumes, artistas y playlists desde una interfaz inspirada en plataformas musicales modernas.
 
-### Using the latest Nightly Flatpak
+---
 
-You can download the [latest Nightly flatpak](https://vixalien.github.io/muzika/muzika.flatpakref).
+# ✨ Características
 
-### From source
+- 🎧 Streaming de música en alta calidad
+- 🔎 Búsqueda avanzada de canciones, artistas y álbumes
+- 📻 Radios y mixes personalizados
+- ❤️ Biblioteca musical personalizada
+- 🎵 Visualización de letras de canciones
+- 📀 Exploración de playlists y álbumes
+- 🔐 Inicio de sesión con Google
+- ⚡ Interfaz rápida y minimalista
+- 🌙 Diseño moderno inspirado en GNOME y aplicaciones premium
+- 🖥️ Compatibilidad multiplataforma
 
-Dependencies:
+---
 
-- GNOME Builder
+# 🖼️ Capturas de pantalla
 
-1. Clone the repository
+## 🏠 Inicio
+
+![Home](data/resources/screenshots/home.png)
+
+---
+
+## 🎶 Reproducción
+
+![Playing](data/resources/screenshots/playing.png)
+
+---
+
+# 🛠️ Tecnologías utilizadas
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/GNOME-4A86CF?style=for-the-badge&logo=gnome&logoColor=white" />
+
+<img src="https://img.shields.io/badge/GTK-7FE719?style=for-the-badge&logo=gtk&logoColor=black" />
+
+<img src="https://img.shields.io/badge/libadwaita-222222?style=for-the-badge&logo=gnome&logoColor=white" />
+
+<img src="https://img.shields.io/badge/Meson-0078D7?style=for-the-badge&logo=meson&logoColor=white" />
+
+<img src="https://img.shields.io/badge/Ninja-BLACK?style=for-the-badge&logo=gnubash&logoColor=white" />
+
+<img src="https://img.shields.io/badge/Flatpak-4A90E2?style=for-the-badge&logo=flatpak&logoColor=white" />
+
+</p>
+
+---
+
+# 📥 Instalación
+
+## 🔹 Descargar Flatpak
+
+Puedes descargar la última versión Flatpak desde:
 
 ```bash
-git clone https://github.com/vixalien/muzika.git --recurse-submodules
-```
+flatpak install muzika.flatpakref
+🔹 Compilar desde el código fuente
+Requisitos
+GNOME Builder
+GTK4
+libadwaita
+Meson
+Ninja
+Clonar el repositorio
+git clone https://github.com/isairey/Muzika.git --recurse-submodules
+Abrir el proyecto
 
-2. Open the project in GNOME Builder and use "Build" to build the project.
+Abre el proyecto en GNOME Builder y selecciona:
 
-> Note: Using Meson and Ninja directly is no longer supported because Muzika
-> uses the latest (unreleased) libadwaita components.
+Build → Run
+🚀 Navegación interna
 
-## Navigation
+Muzika utiliza un sistema de navegación mediante URIs personalizadas.
 
-Muzika has a robust navigator that allows you to navigate through different
-pages by using muzika URIs. Some of them are documented below.
+Ejemplos
+muzika:home
+muzika:library
+muzika:album:ID
+muzika:playlist:ID
+search:rock
+📂 Estructura del proyecto
+Muzika/
+│
+├── data/
+├── src/
+├── screenshots/
+├── meson.build
+├── package.json
+└── README.md
+📊 Roadmap
+ Descarga de canciones offline
+ Sincronización multiplataforma
+ Ecualizador integrado
+ Sistema de recomendaciones
+ Temas personalizados
+ Letras sincronizadas
+ Aplicación móvil
+🤝 Contribuciones
 
-The muzika URI has the form `muzika:endpoint:data`. URIs can also have query
-parameters. For example, `muzika:library?view=grid` will open the library page
-with the grid view.
+Las contribuciones son bienvenidas.
 
-You can navigate to a muzika URI by directly typing it in the search bar and
-muzika will visit that page directly instead of searching it.
+Si deseas mejorar el proyecto:
 
-You can also navigate to a given endpoint by triggering the navigator action
-manually:
+Haz un Fork
+Crea una nueva rama
+git checkout -b feature/nueva-funcion
+Realiza tus cambios
+Haz commit
+git commit -m "Nueva funcionalidad"
+Haz push
+git push origin feature/nueva-funcion
+Abre un Pull Request
+👨‍💻 Autor
+<p align="center"> <img src="https://github.com/isairey.png" width="120" style="border-radius:50%;" /> </p> <p align="center"> <b>Isai Reyes</b> </p> <p align="center"> Desarrollador Full Stack apasionado por la música, el diseño moderno y las aplicaciones multiplataforma. </p>
+📜 Licencia
 
-1. Open the GTK inspector by pressing `Ctrl+Shift+I`.
-2. Click on the `Actions` tab on the right.
-3. Look for the action named `navigator.visit` and type in your URI in the
-   `Parameter` field, then click `Activate`.
+Este proyecto está bajo la licencia MIT.
 
-### Endpoints
-
-A list of all endpoints are [here](src/pages.ts).
-
-- `muzika:home` - Home page
-- `muzika:playlist:<playlistId>` - Playlist page. eg:
-  `muzika:playlist:PL4fGSI1pDJn6puJdseH2Rt9sMvt9E2M4i`/
-- `muzika:album:<albumId>` - Album page.
-- `muzika:artist:<channelId>` - Artist or Channel page.
-- `search:<query>` - Search. Note that query must be URL encoded. eg:
-  `search:hello%20world` searches for `hello world`.
-- `muzika:library` - Library.
-
-More endpoints will be added as Muzika supports more features.
+Puedes usarlo, modificarlo y distribuirlo libremente.
